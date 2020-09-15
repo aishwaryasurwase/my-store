@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <h3>Products</h3>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div *ngFor="let product of products; let i=index" style="margin-bottom: 20px;">
+                <a [routerLink]="['/product', i]">
+                    <h5 style="color: blue;">{{product.name}}</h5>
+                    <p style="color: black">{{product.description}}</p>
+                </a>
+                <button class="btn btn-primary px-4" type="button" (click)="onShare()">Share</button>
+                <app-product-alert [product]="product" (notify)="onNotify()"></app-product-alert>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

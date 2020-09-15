@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row mt-3">
+        <h3>Cart details</h3>
+        <button type="button" class="btn btn-primary" style="right: 50px; position: absolute;"
+            (click)="placeOrder=true">Place Order</button>
+    </div>
+    <hr>
+    <div class="row mt-3 col-xs-12">
+        <div class="col-xs-4" style="width: 50%;">
+            <div *ngFor="let product of cartProducts">
+                <h3>{{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <p>{{product.price | currency}}</p>
+            </div>
+        </div>
+        <div class="col-xs-8" style="width: 50%;" *ngIf="placeOrder">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" required ngModel #name="ngModel">
+                    <small *ngIf="name.invalid && name.touched">Name is required</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea name="address" id="address" rows="5" class="form-control" required ngModel
+                        #address="ngModel"></textarea>
+                    <small *ngIf="address.invalid && address.touched">Address is required</small>
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Add address</button>
+            </form>
+        </div>
+    </div>
+</div>

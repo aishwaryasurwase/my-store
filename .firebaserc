@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mystore-49599": {
+      "hosting": {
+        "mystore": [
+          "mystore-49599"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "my-store": "mystore-49599"
+  }
+}

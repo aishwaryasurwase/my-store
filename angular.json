@@ -117,8 +117,16 @@
               "devServerTarget": "mystore:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "mystore"
+    }
+  },
+  "defaultProject": "mystore",
+  "cli": {
+    "analytics": "24a37a03-7033-41de-ae43-a6fae2bb1f84"
+  }
 }
