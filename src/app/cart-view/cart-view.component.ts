@@ -20,5 +20,6 @@ export class CartViewComponent implements OnInit {
   onSubmit(form: NgForm): void {
     window.alert('Your order placed successfully!');
     form.reset();
+    this.placeOrder = false;
   }
 }
